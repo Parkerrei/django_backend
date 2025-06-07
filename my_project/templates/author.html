@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form method="post" class="row g-3">
+    {% csrf_token %}
+    <a href="{% url 'book_list' %}">book_list</a>
+    <div class="container" style="width: 70%;">
+      {% if messages %}
+        {% for message in messages %}
+          <div id="message-1" class="col-4">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+
+      <div class="col-4">
+        <label for="name4" class="form-label">name</label>
+        <input type="text" class="form-control" id="name4" name="name" required />
+      </div>
+    </div>
+  </form>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const me = document.getElementById('message-1')
+      setTimeout(() => {
+        if (me) {
+          me.style.display = 'none'
+        }
+      }, 3000)
+    })
+  </script>
+{% endblock %}

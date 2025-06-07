@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+ 
+  <table class="table" border="2">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">title</th>
+        <th scope="col">author_name</th>
+        <th scope="col">content</th>
+        <th scope="col">created_at</th>
+        <th scope="col">Delete</th>
+        <th scope="col">update</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for i in books %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ i.title }}</td>
+          <td>{{ i.author }}</td>
+
+          <td>
+            {% if i.content %}
+              <img style="width: 100px;" src="{{ i.content.url }}" alt="{{ i.title }}" />
+            {% else %}
+              no content available
+            {% endif %}
+          </td>
+          <td>{{ i.created_at }}</td>
+          <td>
+            <button value="{{ i.id }}" class="btn btn-danger">Delete</button>
+          </td>
+          <td>
+            <a href="{% url 'update_book' i.id %}" class="btn btn-primary">Update</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <input type="hidden" id="csrf" value="{{ csrf_token }}" />
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.btn-danger').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const book_id = button.value
+          const csrf_token = document.getElementById('csrf').value
+          let user = confirm('Are you sure you want to delete this book?')
+          if (user) {
+            fetch(`/remove_book/${book_id}/`, {
+              method: 'DELETE',
+              headers: {
+                'X-CSRFToken': csrf_token
+              }
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.success) {
+                  button.closest('tr').remove()
+                  alert(data.success)
+                } else {
+                  alert(data.error)
+                }
+              })
+              .catch((error) => {
+                alert('error:' + error)
+              })
+          }
+        })
+      })
+    })
+  </script>
+{% endblock %}

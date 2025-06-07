@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form method="post" class="row g-3" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container" style="width: 70%;">
+      <div class="col-4">
+        <label for="content4" class="form-label">content</label>
+        <input type="file" class="form-control" id="content4" name="content" required />
+      </div>
+
+      <select name="author_id" required>
+        {% for i in author %}
+          <option value="{{ i.id }}">{{ i.name }}</option>
+        {% endfor %}
+      </select>
+
+      <div class="col-4">
+        <label for="title" class="form-label">title</label>
+        <input type="text" class="form-control" id="title" name="title" required />
+      </div>
+
+      <div class="col-4">
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+        <a href="{% url 'log_out' %}" class="btn btn-danger">logout</a>
+      </div>
+    </div>
+  </form>
+{% endblock %}
+<input type="hidden" id="csrf" value="{{ csrf_token }}" />

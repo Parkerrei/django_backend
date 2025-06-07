@@ -1,0 +1,9 @@
+<ul>
+  {% for author in authors %}
+    {% if author.book_count <= 0 %}
+      <li>{{ author.name }} - has no books listed.</li>
+    {% else %}
+      <li>{{ author.name }} has written — {{ author.book_count }} books</li>
+    {% endif %}
+  {% endfor %}
+</ul>

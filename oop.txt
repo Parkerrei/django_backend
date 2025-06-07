@@ -1,0 +1,101 @@
+CORE OF OOP CONCEPTS ARE :
+1) CLASSES
+2) methods / function 
+3) OBJECTS / attributes
+4) INHERITANCE
+5) ENCAPSULATION 
+6) POLYMORPHISM 
+7) ABSTRACTION 
+
+IN PYTHON OBJECT-ORIENTED PROGRAMMING (OOPS) IS A PROGRAMMING PARADIGM THAT USES OBJECTS AND 
+CLASSES IN PROGRAMMING. IT AIMS TO IMPLEMENT REAL-WORLD ENTITIES LIKE INHERITANCE, POLYMORPHISMS, 
+ENCAPSULATION,ETC.IN THE PROGRAMMING. THE MAIN CONCEPT OF OOP IS TO BIND THE DATA AND THE FUNCTIONS THAT WORK 
+TOGETHER AS A SINGLE UNIT SO THAT  NO OTHER PART OF THE CODE CAN ACCESS THIS DATA.  
+
+
+To map with real world scenarios , we started using objects in code this is called object oriented programming.
+Class is a blueprint for creating objects .All classes have a funtion called __init__() also called constructor , which is always
+executed when the class is being initiated.
+The self parameter is a reference to the current instance
+of the class,and is used to access variables that belongs 
+to the class.
+Static method in python is a method that belongs to a class rather than an instance of the class.
+it doesnot require an instance to be called an doesn't have access to instance-specific data.Static 
+methods are defined using the @staticmethod decorator
+Contructor always take a parameter called self paramter as its values.
+Default constructor have only self as its paramter.
+Parameterized contructors are those which has self and other parameters of a class.
+There are two attributes. they are [Class attributes and object attributes]
+Methods are functions that belongs to objects.
+Methods is a function that is associated with an object.Methods define the behaviours of an object
+and can manipultae the objects's data.They are a key concept in object oriented programming.
+Methods are defined within a class and describe the actions that an object of that class can perform.
+Methods can access and modify the objects attributes(data).
+Methods are called on an object using the dot notation, like object.method().
+Methods that don't use self parameters are called static methods works at class level.
+class methods are called without self parameter.
+instance methods are called with self parameter and are basically objects of class attributes.
+Decorators allow us to wrap another fucntion in order to extend the behaviour of the wrapped
+function , without parmanently modifying it.
+The four pillars of oop(object oriented programming) are:
+Abstraction --- hiding the implementation details of a class and only showing the essential 
+features to the user.
+Encapsulation --- wrapping data and functions into a single unit(object).
+@property decorator is use on any method in the class to use the method as a property.
+It is a built in function that allows you to define methods in a class that can be accessed like 
+attributes. THis is useful for encapsulating the internal representation of data while  
+providing a clean and intuitive interface for accesing and modifying that data.
+Del keyword is used to delete object properties or object itself.
+Private attributes and methods are meant to be used only within the class and are not 
+accessible from outside the class.
+Inheritance is when one class(child/derived) derives the properties and methods of another 
+class(parent/base).
+
+There are three types of Inheritance ,they are:
+1)single Inheritance      - trasfer of attributes from one class to another.
+2)multi-level Inheritance - transfer of attributes from one class to multiple class and so on.
+3)multiple Inheritance    - calling multiple class inside one class 
+
+Super() method is used to access methods of the parent class.
+A class method is bound to the class and receives the class as an implicit first argument.
+Note - static method can't  access or modify class state and generally for utility.
+An instance is a specific object created from a class.think of it as a unique copy of the class with its own set 
+of attributes and methods.FOr example,if you have a class person each individual person you 
+create from that class is an instance.
+'\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\'
+
+POLYMORPHISM : OPERATOR OVERLOADING
+WHEN the same operator is allowed to have different meaning according to the context.
+POLYMORPHISM IS A CORE CONCEPT IN OBJECT ORIENTED PROGAMMING (OOP) THAT ALLOWS OBJECT OF 
+DIFFERENT CLASSES TO BE TREATED AS OBJECTS OF A COMMON SUPERCLASS(parent class).IT ENABLES A SIGLE INTERFACE TO 
+REPRESENT DIFFERENT UNDERLYING FORMS (DATA TYPES).IN SIMPLER TERMS, POLYMORPHISM ALLOWS THE 
+SAME OPERATION (function) TO BEHAVE DIFFERENTLY ON DIFFERENT CLASSES.
+
+THERE ARE TWO MAIN TYPES OF POLYMORPHISM:
+1) COMPILE-TIME POLYMORPHISM(STATIC POLYMORPHISM) : THIS IS ACHIEVED THROUGH METHOD OVERLOADING 
+OR OPERATOR OVERLOADING.IT IS RESOLVED DURING COMPILE TIME.
+      A) METHOD OVERLOADING : MULTIPLE METHODS IN THE SAME CLASS WITH THESAME NAME BUT 
+      DIFFERENT PARAMETERS.
+      B) OPERATOR OVERLOADING : DEFINING  HOW OPERATORS BEHAVE WITH DIFFERENT DATA TYPES.
+
+2) RUN-TIME POLYMORPHISM(DYNAMIC POLYMORPHISM) : THIS IS ACHIEVED THROUGH METHOD OVERRIDING.IT IS 
+RESOLVED DURING RUNTIME.
+      A) METHOD  OVERRINDING : A SUBCLASS PROVIDED A SPECIFIC IMPLEMENTATION OF A METHOD THAT IS 
+      ALREADY DEFINED IN ITS SUPERCLASS
+
+A PROGRAM IS MADE UP OF MANY COOPERATING OBJECTS.INSTEAD OF BEING THE 'WHOLE PRORGAM'-EACH OBJECT IS A LITTLE 'ISLAND' WITHIN THE 
+PROGRAM AND COOPERATIVELY WORKING WITH OTHER OBJECTS.
+A PROGRAM IS MADE UP OF ONE OR MORE OBJECTS WORKING TOGETTHER-OBJECTS MAKE USE OF EACH OTHER'S CAPABILITIES.
+AN OBJECT IS A BIT OF SELF-CONTAINED CODE AND DATA 
+A KEY ASPECT OF THE OBJECT APPORACH IS TO BREAK THE PROBLEM INTO SMALLER UNDERSTANDABLE PARTS(DIVIDE AND CONQUER) 
+OBJECTS HAVE BOUNDARIES THAT ALLOW US TO IGNORE UN-NEEDED DETAIL 
+WE HAVE BEEN USING OBJECTS ALL ALONG : STRING OBJETS, INTEGER OBJECTS, DICTIONARY OBJECTS, LIST OBJECTS...
+OBJECTS HIDE DETAIL - THEY ALLOW THE REST OF THE PROGRAM TO IGNORE THE DETAIL ABOUT US.
+
+IN PYTHON ,METHODS WITHIN A CLASS ARE DESIGNED TO OPERATE ON THE INSTANCE OF THE CLASS, WHICH IS REPRESENTED
+BY SELF.WHEN YOU CALL A METHOD ON AN INSTANCE, YOU DONT ENED TO CREATE A SEPARATE OBJECT FOT THE METHOD ITSELF.
+INSTEAD, YOU CALL THE METHOD ON THE INSTANCE, AND IT OPERATES ON THE INSTANCE'S ATTRIBUTES.
+
+Outside Any Methods
+When we say that class attributes are defined "outside any methods," we mean that they are defined directly within the class body, not inside any function or
+method. This makes them accessible to all instances of the class and any subclasses.
